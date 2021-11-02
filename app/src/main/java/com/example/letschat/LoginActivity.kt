@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        edtEmail = findViewById(R.id.log_in)
+        edtEmail = findViewById(R.id.edt_email_phone)
         edtPassword = findViewById(R.id.password)
         btnLogin = findViewById(R.id.btn_login)
         btnSignUp = findViewById(R.id.btn_signup)
@@ -42,6 +42,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String) {
-        
+
     }
 }

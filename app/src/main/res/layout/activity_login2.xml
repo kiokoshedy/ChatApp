@@ -15,7 +15,7 @@
         android:src="@drawable/chat1" />
 
     <EditText
-        android:id="@+id/log_in"
+        android:id="@+id/edt_email_phone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/app_logo"
@@ -30,7 +30,7 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/log_in"
+        android:layout_below="@id/edt_email_phone"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
