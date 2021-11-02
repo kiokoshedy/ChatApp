@@ -23,6 +23,11 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        //hides Action bar
+        supportActionBar?.hide()
+
+        mAuth = FirebaseAuth.getInstance()
+
         edtFname = findViewById(R.id.edt_fname)
         edtSname = findViewById(R.id.edt_sname)
         edtEmail = findViewById(R.id.edt_email_phone)
