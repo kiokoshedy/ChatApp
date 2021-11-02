@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:src="@drawable/download" />
+        android:src="@drawable/chat1" />
 
     <EditText
         android:id="@+id/log_in"
@@ -50,6 +50,7 @@
         android:text="Log In" />
 
     <Button
+        android:id="@+id/btn_signup"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_login"
