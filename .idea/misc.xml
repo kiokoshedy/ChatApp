@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/magab/AndroidStudioProjects/LetsChat/app/src/main/res/drawable/btn_background.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/magab/AndroidStudioProjects/LetsChat/app/src/main/res/drawable/edt_background.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/magab/AndroidStudioProjects/LetsChat/app/src/main/res/layout/activity_login2.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/magab/AndroidStudioProjects/LetsChat/app/src/main/res/layout/activity_sign_up.xml" value="0.259375" />
       </map>
     </option>
   </component>
