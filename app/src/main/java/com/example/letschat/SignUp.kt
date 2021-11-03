@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
 
@@ -17,6 +19,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var btnSignUp: Button
 
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var mDbRef: DatabaseReference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,25 +37,23 @@ class SignUp : AppCompatActivity() {
         edtPassword = findViewById(R.id.password)
         btnSignUp = findViewById(R.id.btn_signup)
 
-
         btnSignUp.setOnClickListener {
 
-            /*val fName = edtFname.text.toString()
-            val sName = edtSname.text.toString()*/
-
+            val fName = edtFname.text.toString()
+            val sName = edtSname.text.toString()
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
-            signUp(email, password)
+            signUp(fName, sName, email, password)
         }
     }
-    private fun signUp(email: String, password: String) {
+    private fun signUp(fname: String, sname: String, email: String, password: String) {
 
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-
+                     addUserToDatabase(fname, sname, email, mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp, MainActivity::class.java)
                     startActivity(intent)
 
@@ -64,4 +65,11 @@ class SignUp : AppCompatActivity() {
             }
 
     }
+
+    private fun addUserToDatabase(sname: String, fname: String, email: String, uid: String) {
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+
+        mDbRef.child("user").child(uid).setValue(User(sname, fname, email, uid))
+    }
+
 }
