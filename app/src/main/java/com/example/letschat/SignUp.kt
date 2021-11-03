@@ -55,6 +55,7 @@ class SignUp : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                      addUserToDatabase(fname, sname, email, mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp, MainActivity::class.java)
+                    finish()
                     startActivity(intent)
 
                 } else {
